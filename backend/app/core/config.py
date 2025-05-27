@@ -12,6 +12,7 @@ class Settings(BaseSettings):
     """
     VERKADA_API_KEY: str = os.getenv("VERKADA_API_KEY", "not_set")
     VERKADA_ORG_ID: str = os.getenv("VERKADA_ORG_ID", "not_set") # If needed by authenticator or other services
+    VERKADA_API_BASE_URL: str = os.getenv("VERKADA_API_BASE_URL", "https://api.verkada.com") # Default, override in .env
     # Add other settings here as needed
 
     class Config:

@@ -91,7 +91,7 @@ class VerkadaAuthenticator:
 
         try:
             token_data = response.json()
-            new_token = token_data.get("apiToken") # Based on cURL example, assuming "apiToken"
+            new_token = token_data.get("token") # Changed "apiToken" to "token" to match actual response
             if not new_token:
                 # Reason: The expected token field is missing from the response.
                 raise TokenGenerationError(
