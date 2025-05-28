@@ -33,22 +33,22 @@ This document tracks the status of development tasks for the Verkada Access Cont
     - [x] Create API endpoint (`/api/v1/verkada/peak-times`) for chart data.
     - [x] Integrate Pandas for data aggregation.
 
-## Phase 3: Frontend Development (In Progress)
+## Phase 3: Frontend Development (Completed on 2025-05-28)
 - [x] **Frontend Setup:** (Completed on 2025-05-27, based on file structure)
     - [x] Initialize React project (Vite).
     - [x] Integrate Tailwind CSS.
     - [x] Set up Axios (Assumed if project initialized and common practice).
-- [ ] **Authentication UI:**
-    - [ ] Create Login/Registration pages.
-    - [ ] Implement frontend auth logic.
-    - [ ] Implement protected routes.
-- [ ] **Dashboard UI - Event Timeline:**
-    - [ ] Create main dashboard layout.
-    - [ ] Develop event timeline component.
-    - [ ] Implement UI for filtering.
-- [ ] **Dashboard UI - Peak Access Times Chart:**
-    - [ ] Integrate a charting library.
-    - [ ] Develop chart component.
+- [x] **Authentication UI:** (Completed on 2025-05-28)
+    - [x] Create Login/Registration pages. (2025-05-28)
+    - [x] Implement frontend auth logic. (2025-05-28)
+    - [x] Implement protected routes. (2025-05-28)
+- [x] **Dashboard UI - Event Timeline:** (Completed on 2025-05-28)
+    - [x] Create main dashboard layout. (2025-05-28)
+    - [x] Develop event timeline component. (2025-05-28)
+    - [x] Implement UI for filtering. (2025-05-28)
+- [x] **Dashboard UI - Peak Access Times Chart:** (Completed on 2025-05-28)
+    - [x] Integrate a charting library. (2025-05-28)
+    - [x] Develop chart component. (2025-05-28)
 
 ## Phase 4: Deployment to Proxmox LXC
 - [ ] **Containerization:**
@@ -70,6 +70,16 @@ This document tracks the status of development tasks for the Verkada Access Cont
 - [ ] **Refinement:**
     - [ ] Code reviews, performance optimization, security hardening.
     - [x] Make a git commit to save project progress (feat: Initialize frontend with React, Tailwind, and Axios) (2025-05-27)
+    - [x] Make a git commit to save project progress (feat: Implement Phase 3 frontend UI components and auth) (2025-05-28)
 
 ---
-*Tasks added on 2025-05-27*
+*Tasks added on 2025-05-27, updated 2025-05-28*
+## Resuming with Software Planning MCP
+
+To resume using the `github.com/NightTrek/Software-planning-mcp`:
+1.  Retrieve the project goal from `PLANNING.MD`.
+2.  Use the MCP's `start_planning` tool with this goal.
+3.  Use the MCP's `get_todos` tool to check its current task list.
+4.  If the MCP's list is empty or outdated compared to this `TASK.MD` file, use this file as the source of truth to populate/synchronize the MCP's to-do list. This involves:
+    *   Adding tasks listed here (that are not yet in the MCP or are marked incomplete) using the `add_todo` tool.
+    *   Updating the status of tasks in the MCP to `isComplete: true` if they are marked `[x]` in this `TASK.MD` file, using the `update_todo_status` tool.
