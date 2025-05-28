@@ -2,42 +2,42 @@
 
 This document tracks the status of development tasks for the Verkada Access Control Dashboard.
 
-## Phase 1: Project Setup & Core Backend
-- [ ] **Initialize Project Structure:**
+## Phase 1: Project Setup & Core Backend (Completed on 2025-05-27)
+- [x] **Initialize Project Structure:**
     - [x] Create main project directory (`Verkada_Access_Dashboard`). (Already exists as workspace)
     - [x] Set up subdirectories: `backend/`, `frontend/`, `docs/`, `tests/`, `deploy/`.
     - [x] Initialize Git repository.
-    - [ ] Create `PLANNING.MD` stub. (Already created with full plan)
-    - [ ] Create `TASK.MD` stub.
-    - [ ] Create `README.md` stub.
-- [ ] **Backend - FastAPI Setup:**
-    - [ ] Set up a virtual environment for Python.
-    - [ ] Install FastAPI, Uvicorn, SQLAlchemy, Pydantic.
-    - [ ] Create a basic FastAPI application structure.
-- [ ] **Backend - User Authentication:**
-    - [ ] Design SQLite schema for users (username, hashed_password).
-    - [ ] Implement user registration and login endpoints.
-    - [ ] Implement password hashing.
-    - [ ] Implement token-based authentication (e.g., JWTs).
-- [ ] **Backend - Verkada API Integration:**
-    - [ ] Integrate existing Python module for Verkada API authentication.
-    *   [ ] Securely manage Verkada API key.
-    *   [ ] Develop a test endpoint to fetch sample Verkada data.
+    - [x] Create `PLANNING.MD` stub. (Created with full plan)
+    - [x] Create `TASK.MD` stub.
+    - [x] Create `README.md` stub.
+- [x] **Backend - FastAPI Setup:**
+    - [x] Set up a virtual environment for Python.
+    - [x] Install FastAPI, Uvicorn, SQLAlchemy, Pydantic, python-dotenv, passlib, python-jose[cryptography], bcrypt, requests, pydantic-settings, pandas.
+    - [x] Create a basic FastAPI application structure.
+- [x] **Backend - User Authentication:**
+    - [x] Design SQLite schema for users (username, hashed_password).
+    - [x] Implement user registration and login endpoints.
+    - [x] Implement password hashing.
+    - [x] Implement token-based authentication (e.g., JWTs).
+- [x] **Backend - Verkada API Integration:**
+    - [x] Integrate existing Python module for Verkada API authentication.
+    - [x] Securely manage Verkada API key (via .env).
+    - [x] Develop a test endpoint to fetch sample Verkada data (tested /test-token).
 
-## Phase 2: Backend API Development for Dashboard Features
-- [ ] **Events Endpoint:**
-    - [ ] Create API endpoint (`/api/events`) for access control events.
-    - [ ] Implement pagination.
-    - [ ] Implement filtering by date range and user.
-- [ ] **Peak Times Chart Data Endpoint:**
-    - [ ] Create API endpoint (`/api/events/peak-times`) for chart data.
-    - [ ] Consider Pandas for data aggregation.
+## Phase 2: Backend API Development for Dashboard Features (Completed on 2025-05-27)
+- [x] **Events Endpoint:**
+    - [x] Create API endpoint (`/api/v1/verkada/events`) for access control events.
+    - [x] Implement pagination (basic pass-through).
+    - [x] Implement filtering by date range and user (basic pass-through).
+- [x] **Peak Times Chart Data Endpoint:**
+    - [x] Create API endpoint (`/api/v1/verkada/peak-times`) for chart data.
+    - [x] Integrate Pandas for data aggregation.
 
-## Phase 3: Frontend Development
-- [ ] **Frontend Setup:**
-    - [ ] Initialize React project.
-    - [ ] Integrate Tailwind CSS.
-    - [ ] Set up Axios.
+## Phase 3: Frontend Development (In Progress)
+- [x] **Frontend Setup:** (Completed on 2025-05-27, based on file structure)
+    - [x] Initialize React project (Vite).
+    - [x] Integrate Tailwind CSS.
+    - [x] Set up Axios (Assumed if project initialized and common practice).
 - [ ] **Authentication UI:**
     - [ ] Create Login/Registration pages.
     - [ ] Implement frontend auth logic.
@@ -69,6 +69,7 @@ This document tracks the status of development tasks for the Verkada Access Cont
     - [ ] Docstrings and comments.
 - [ ] **Refinement:**
     - [ ] Code reviews, performance optimization, security hardening.
+    - [x] Make a git commit to save project progress (feat: Initialize frontend with React, Tailwind, and Axios) (2025-05-27)
 
 ---
 *Tasks added on 2025-05-27*

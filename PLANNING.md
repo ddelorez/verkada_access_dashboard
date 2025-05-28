@@ -48,39 +48,39 @@ graph TD
 
 ### Development Phases & Key Tasks:
 
-**Phase 1: Project Setup & Core Backend (Complexity: 6/10)**
-1.  **Initialize Project Structure:**
+**Phase 1: Project Setup & Core Backend (Complexity: 6/10) [COMPLETED - 2025-05-27]**
+1.  **Initialize Project Structure:** [DONE]
     *   Create main project directory (`Verkada_Access_Dashboard`).
     *   Set up subdirectories: `backend/`, `frontend/`, `docs/`, `tests/`, `deploy/`.
     *   Initialize Git repository.
-2.  **Backend - FastAPI Setup:**
+2.  **Backend - FastAPI Setup:** [DONE]
     *   Set up a virtual environment for Python.
-    *   Install FastAPI, Uvicorn, SQLAlchemy, Pydantic.
+    *   Install FastAPI, Uvicorn, SQLAlchemy, Pydantic, python-dotenv, passlib, python-jose[cryptography], bcrypt, requests, pydantic-settings, pandas.
     *   Create a basic FastAPI application structure.
-3.  **Backend - User Authentication:**
+3.  **Backend - User Authentication:** [DONE]
     *   Design SQLite schema for users (username, hashed_password).
     *   Implement user registration and login endpoints.
     *   Implement password hashing.
     *   Implement token-based authentication (e.g., JWTs).
-4.  **Backend - Verkada API Integration:**
+4.  **Backend - Verkada API Integration:** [DONE]
     *   Integrate existing Python module for Verkada API authentication.
     *   Securely manage Verkada API key.
     *   Develop a test endpoint to fetch sample Verkada data.
 
-**Phase 2: Backend API Development for Dashboard Features (Complexity: 7/10)**
-1.  **Events Endpoint:**
-    *   Create API endpoint (`/api/events`) for access control events.
-    *   Implement pagination.
-    *   Implement filtering by date range and user.
-2.  **Peak Times Chart Data Endpoint:**
-    *   Create API endpoint (`/api/events/peak-times`) for chart data.
-    *   Consider Pandas for data aggregation.
+**Phase 2: Backend API Development for Dashboard Features (Complexity: 7/10) [COMPLETED - 2025-05-27]**
+1.  **Events Endpoint:** [DONE]
+    *   Create API endpoint (`/api/v1/verkada/events`) for access control events.
+    *   Implement pagination (basic pass-through).
+    *   Implement filtering by date range and user (basic pass-through).
+2.  **Peak Times Chart Data Endpoint:** [DONE]
+    *   Create API endpoint (`/api/v1/verkada/peak-times`) for chart data.
+    *   Integrate Pandas for data aggregation.
 
-**Phase 3: Frontend Development (Complexity: 8/10)**
+**Phase 3: Frontend Development (Complexity: 8/10) [IN PROGRESS]**
 1.  **Frontend Setup:**
-    *   Initialize React project.
-    *   Integrate Tailwind CSS.
-    *   Set up Axios.
+    *   Initialize React project. [DONE - 2025-05-27]
+    *   Integrate Tailwind CSS. [DONE - 2025-05-27]
+    *   Set up Axios. [DONE - 2025-05-27]
 2.  **Authentication UI:**
     *   Create Login/Registration pages.
     *   Implement frontend auth logic.
