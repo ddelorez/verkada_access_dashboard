@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./.env:/app/.env
+      - ./backend_data:/app/app # Mount a directory for persistent data, assuming sql_app.db is in /app/app/
+    environment:
+      - PYTHONUNBUFFERED=1 # For seeing logs in real-time
+    networks:
+      - verkada_dashboard_net
+
+  frontend:
+    build:
+      context: ./frontend/dashboard
+      dockerfile: Dockerfile
+    ports:
+      - "80:80" # Assuming Nginx in frontend Dockerfile serves on port 80
+    depends_on:
+      - backend
+    networks:
+      - verkada_dashboard_net
+
+networks:
+  verkada_dashboard_net:
+    driver: bridge

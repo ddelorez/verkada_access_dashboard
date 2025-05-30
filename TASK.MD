@@ -50,30 +50,31 @@ This document tracks the status of development tasks for the Verkada Access Cont
     - [x] Integrate a charting library. (2025-05-28)
     - [x] Develop chart component. (2025-05-28)
 
-## Phase 4: Deployment to Proxmox LXC
-- [ ] **Containerization:**
-    - [ ] `Dockerfile` for FastAPI backend.
-    - [ ] `Dockerfile` for React frontend (or serve via FastAPI).
-- [ ] **Proxmox LXC Setup:**
-    - [ ] Create LXC container.
-    - [ ] Install Docker in LXC.
-    - [ ] Deploy containers (Docker Compose).
-    - [ ] Configure networking and persistent storage.
+## Phase 4: Deployment to Proxmox VM (Completed on 2025-05-30)
+- [x] **Containerization:**
+    - [x] `Dockerfile` for FastAPI backend.
+    - [x] `Dockerfile` for React frontend.
+- [x] **Proxmox VM Setup (using VM 101 - ASAP-Docker-Host):**
+    - [x] Switched from LXC to existing VM 101. Ensured QEMU Guest Agent running.
+    - [x] Install Docker Engine & Docker Compose plugin on VM 101.
+    - [x] Deploy containers (created `docker-compose.yml`).
+    - [x] Configure networking and persistent storage (via `docker-compose.yml`).
 
 ## Phase 5: Testing, Documentation & Refinement (Ongoing)
-- [ ] **Testing:**
-    - [ ] Backend unit tests (Pytest).
-    - [ ] Frontend component tests.
+- [x] **Testing:**
+    - [x] Backend unit tests (Pytest) - Initial tests for auth endpoints created.
+    - [x] Frontend component tests (Vitest) - Initial test for LoginPage created.
 - [ ] **Documentation:**
     - [ ] Update `README.md`, `PLANNING.md`, `TASK.MD`.
     - [ ] Docstrings and comments.
 - [ ] **Refinement:**
     - [ ] Code reviews, performance optimization, security hardening.
+    - [ ] Implement Container Vulnerability Scanning.
     - [x] Make a git commit to save project progress (feat: Initialize frontend with React, Tailwind, and Axios) (2025-05-27)
     - [x] Make a git commit to save project progress (feat: Implement Phase 3 frontend UI components and auth) (2025-05-28)
 
 ---
-*Tasks added on 2025-05-27, updated 2025-05-28*
+*Tasks added on 2025-05-27, updated 2025-05-30*
 ## Resuming with Software Planning MCP
 
 To resume using the `github.com/NightTrek/Software-planning-mcp`:

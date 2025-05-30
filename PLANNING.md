@@ -1,6 +1,6 @@
 ## Project Plan: Verkada Access Control Dashboard
 
-**Goal:** Develop a modern dashboard for Verkada access control events, hosted on Proxmox LXC containers, leveraging an existing Python authentication module for Verkada API access, FastAPI for the backend, React/Tailwind for the frontend, and SQLite for user authentication.
+**Goal:** Develop a modern dashboard for Verkada access control events, hosted on a Proxmox VM (Ubuntu Server), leveraging an existing Python authentication module for Verkada API access, FastAPI for the backend, React/Tailwind for the frontend, and SQLite for user authentication.
 
 **Core Features:**
 1.  Display a timeline of access control events with details.
@@ -13,7 +13,7 @@
 *   **Frontend:** React, Tailwind CSS, Axios (for API calls)
 *   **Database (for dashboard users):** SQLite
 *   **Verkada API Access:** Existing Python module
-*   **Deployment:** Docker, Proxmox LXC
+*   **Deployment:** Docker, Docker Compose, Proxmox VM (Ubuntu Server)
 
 ---
 
@@ -27,19 +27,22 @@ graph TD
         Frontend[React + Tailwind CSS App]
     end
 
-    Browser -- API Calls (HTTPS) --> LXC[Proxmox LXC Container]
+    Browser -- API Calls (HTTPS) --> ProxmoxVM[Proxmox VM (Ubuntu Server)]
 
-    subgraph LXC
-        subgraph DashboardBackend[FastAPI Application]
-            AuthAPI[User Auth API (login, logout)] -- R/W --> UserDB[(SQLite User DB)]
-            EventsAPI[Access Events API (timeline, filter, chart data)] -- Uses --> VerkadaAuthMod[Verkada Auth Module]
+    subgraph ProxmoxVM
+        subgraph DockerEnvironment[Docker Environment]
+            DashboardBackend[FastAPI Application (Docker Container)]
+            FrontendProxy[Nginx/Frontend (Docker Container)]
+            DashboardBackend -- R/W --> UserDB[(SQLite User DB - Volume Mounted)]
+            DashboardBackend -- Uses --> VerkadaAuthMod[Verkada Auth Module]
         end
         VerkadaAuthMod -- API Key + Session Token --> VerkadaAPI[Verkada Cloud API]
     end
 
     style User fill:#f9f,stroke:#333,stroke-width:2px
     style Browser fill:#ccf,stroke:#333,stroke-width:2px
-    style LXC fill:#lightgrey,stroke:#333,stroke-width:2px
+    style ProxmoxVM fill:#lightgrey,stroke:#333,stroke-width:2px
+    style DockerEnvironment fill:#e0f7fa,stroke:#333,stroke-width:1px
     style DashboardBackend fill:#lightblue,stroke:#333,stroke-width:2px
     style VerkadaAPI fill:#bbf,stroke:#333,stroke-width:2px
 ```
@@ -93,15 +96,16 @@ graph TD
     *   Integrate a charting library. [DONE]
     *   Develop chart component. [DONE]
 
-**Phase 4: Deployment to Proxmox LXC (Complexity: 7/10)**
-1.  **Containerization:**
-    *   `Dockerfile` for FastAPI backend.
-    *   `Dockerfile` for React frontend (or serve via FastAPI).
-2.  **Proxmox LXC Setup:**
-    *   Create LXC container.
-    *   Install Docker in LXC.
-    *   Deploy containers (Docker Compose).
-    *   Configure networking and persistent storage.
+**Phase 4: Deployment to Proxmox VM (Complexity: 7/10) [COMPLETED - 2025-05-30]**
+1.  **Containerization:** [DONE]
+    *   `Dockerfile` for FastAPI backend. [DONE]
+    *   `Dockerfile` for React frontend. [DONE]
+2.  **Proxmox VM Setup (using existing VM 101 - ASAP-Docker-Host):** [DONE]
+    *   Ensure QEMU Guest Agent is running on VM. [DONE]
+    *   Install Docker Engine & Docker Compose plugin on VM. [DONE]
+    *   Create `docker-compose.yml` for services. [DONE]
+    *   Configure networking (via Docker Compose) and persistent storage for SQLite DB (via Docker Compose volume). [DONE]
+    *Note: Actual deployment and testing of `docker compose up` on the VM is a manual step.*
 
 **Phase 5: Testing, Documentation & Refinement (Ongoing, Complexity: 6/10)**
 1.  **Testing:**
