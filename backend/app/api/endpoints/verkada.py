@@ -6,11 +6,11 @@ from datetime import datetime, timedelta, timezone # Added datetime, timedelta, 
 import pandas as pd # Import pandas
 
 from app.core.config import verkada_auth_client, get_settings
-from ....app.core.verkada_client.exceptions import TokenGenerationError, ApiKeyNotFoundError
-from ....app.db.session import get_db # For consistency, though not used here yet
-from ....app.core.dependencies import get_current_active_user # To protect this endpoint
-from ....app.db import models as db_models # For type hinting current_user
-from ....app.models import verkada_event as verkada_event_schemas # Import Verkada event Pydantic models
+from app.core.verkada_client.exceptions import TokenGenerationError, ApiKeyNotFoundError
+from app.db.session import get_db # For consistency, though not used here yet
+from app.core.dependencies import get_current_active_user # To protect this endpoint
+from app.db import models as db_models # For type hinting current_user
+from app.models import verkada_event as verkada_event_schemas # Import Verkada event Pydantic models
 
 
 router = APIRouter()
