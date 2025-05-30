@@ -10,3 +10,4 @@ requests
 pandas==2.2.2
 pytest
 httpx
+python-multipart
