@@ -69,6 +69,9 @@ This document tracks the status of development tasks for the Verkada Access Cont
     - [ ] Docstrings and comments.
 - [ ] **Refinement:**
     - [ ] Code reviews, performance optimization, security hardening.
+- [ ] **2025-05-30:** Finalize and verify deployment on VM 101.
+      - Status: In Progress
+      - Notes: Corrected Docker volume mount for backend and database path. Awaiting results of `docker compose up --build` after code push and VM pull.
     - [ ] Implement Container Vulnerability Scanning.
     - [x] Make a git commit to save project progress (feat: Initialize frontend with React, Tailwind, and Axios) (2025-05-27)
     - [x] Make a git commit to save project progress (feat: Implement Phase 3 frontend UI components and auth) (2025-05-28)
