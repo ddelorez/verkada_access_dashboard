@@ -5,7 +5,7 @@ from typing import Any, List, Dict, Optional # Added Optional
 from datetime import datetime, timedelta, timezone # Added datetime, timedelta, timezone
 import pandas as pd # Import pandas
 
-from ....app.core.config import verkada_auth_client, get_settings
+from app.core.config import verkada_auth_client, get_settings
 from ....app.core.verkada_client.exceptions import TokenGenerationError, ApiKeyNotFoundError
 from ....app.db.session import get_db # For consistency, though not used here yet
 from ....app.core.dependencies import get_current_active_user # To protect this endpoint
