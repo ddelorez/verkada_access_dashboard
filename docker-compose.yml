@@ -9,7 +9,7 @@ services:
       - "8000:8000"
     volumes:
       - ./.env:/app/.env
-      - ./backend_data:/app/app # Mount a directory for persistent data, assuming sql_app.db is in /app/app/
+      - ./backend_data:/app/data # Mount for persistent SQLite DB, separate from app code
     environment:
       - PYTHONUNBUFFERED=1 # For seeing logs in real-time
     networks:

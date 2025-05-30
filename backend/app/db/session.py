@@ -4,7 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 # Define the SQLite database URL.
 # The database file will be created in the 'backend' directory.
-SQLALCHEMY_DATABASE_URL = "sqlite:///../dashboard.db"  # Relative to the 'app' directory
+SQLALCHEMY_DATABASE_URL = "sqlite:////app/data/dashboard.db"  # Absolute path for clarity
 
 # Create the SQLAlchemy engine.
 # connect_args is needed for SQLite to allow multithreaded access.
